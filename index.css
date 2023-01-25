@@ -37,7 +37,7 @@ header {
   text-align: center;
 }
 
-.main-container button {
+.add-book-btn {
   padding: 0.8rem 1.8rem;
   margin: 2rem 0;
   border: none;
@@ -106,4 +106,17 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.card p {
+  font-size: 1.2rem;
+}
+
+.remove-book-button {
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem 0;
+  margin-top: -10px;
+  background-color: #c0c0c0;
+  font-size: 1.2em;
 }

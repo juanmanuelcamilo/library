@@ -48,6 +48,25 @@ function displayBooksOnPage() {
     card.classList.add("card");
     booksGrid.appendChild(card);
 
+    //Create remove Button
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("remove-book-button");
+    removeButton.textContent = "Remove From Library";
+
+    //Link the data of the button to the array
+    let arrayIndex = 0;
+    removeButton.dataset.linkedArray = arrayIndex;
+    card.appendChild(removeButton);
+
+    //Make the remove button work
+    removeButton.addEventListener("click", function () {
+      let retrieveBookToRemove = removeButton.dataset.linkedArray;
+
+      myLibrary.splice(parseInt(retrieveBookToRemove), 1);
+      card.remove();
+      displayBooksOnPage();
+    });
+
     for (let key in book) {
       console.log(`${key}: ${book[key]}`);
       const para = document.createElement("p");
