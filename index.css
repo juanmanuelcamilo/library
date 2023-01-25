@@ -73,6 +73,25 @@ header {
   gap: 0.8rem;
 }
 
+.modal-form-input {
+  width: 90%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f0eef1;
+  font-size: 1em;
+}
+
+.modal-button {
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.5rem;
+  background-color: #c0c0c0;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .books-grid {
   margin: 1rem 2rem 1rem;
   display: grid;
