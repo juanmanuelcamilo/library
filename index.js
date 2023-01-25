@@ -15,10 +15,7 @@ window.addEventListener("click", function (e) {
 });
 
 //Array to store my books
-let myLibrary = [
-  { Title: "hasjkfas", Author: "fjhasjfkhjask", Pages: 20, Read: "Yes" },
-  { Title: "hasjkfas", Author: "fjhasjfkhjask", Pages: 20, Read: "Yes" },
-];
+let myLibrary = [];
 
 //Object constructor
 class Book {
@@ -31,13 +28,21 @@ class Book {
 }
 
 //Add a book to the Array
-function addBookToLibrary() {
+function addBookToLibrary(Title, Author, Pages, Read) {
   let book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
+  displayBooksOnPage();
 }
 
 //Displaying the books on the Page
 function displayBooksOnPage() {
+  //Remove all previously displayed cards before I loop over array again
+  const cards = document.querySelectorAll(".card");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].remove();
+  }
+
   myLibrary.forEach((book) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -52,5 +57,30 @@ function displayBooksOnPage() {
   });
 }
 
-displayBooksOnPage();
+//Submit book handler
+const formBtn = document.querySelector(".modal-button");
+formBtn.addEventListener("click", modalInfo);
+
+//Taking the data from the MODAL
+function modalInfo() {
+  let Title = document.getElementById("title").value;
+  let Author = document.getElementById("author").value;
+  let Pages = document.getElementById("pages").value;
+  let Read = document.getElementById("read").value;
+
+  //Break if form is incompleted or invalid
+  if (Title == "" || Author == "" || Pages == "" || Read == "") {
+    return;
+  }
+
+  //Call function to input the book data to array
+  addBookToLibrary(Title, Author, Pages, Read);
+
+  //Reset the form
+  document.querySelector(".modal-form").reset();
+
+  //Close the modal
+  modal.style.display = "none";
+}
+
 console.log(myLibrary);
