@@ -25,5 +25,41 @@
       <button class="add-book-btn">Add Book</button>
       <div class="books-grid"></div>
     </main>
+
+    <div class="modal-container">
+      <form action="" class="modal-form">
+        <h3>Add New Book</h3>
+        <input
+          type="text"
+          class="modal-form-input"
+          id="title"
+          placeholder="title"
+          required
+        />
+        <input
+          type="text"
+          class="modal-form-input"
+          id="author"
+          placeholder="author"
+          required
+        />
+        <input
+          type="number"
+          class="modal-form-input"
+          id="pages"
+          placeholder="pages"
+          required
+        />
+        <div class="read-section">
+          <label for="read">Read:</label>
+          <select id="read" name="read">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <button class="modal-button" type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
