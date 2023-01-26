@@ -68,11 +68,37 @@ function displayBooksOnPage() {
     });
 
     for (let key in book) {
-      console.log(`${key}: ${book[key]}`);
       const para = document.createElement("p");
       para.textContent = `${key}: ${book[key]}`;
       card.appendChild(para);
     }
+
+    //Create change read status Button
+    const readButton = document.createElement("button");
+    readButton.classList.add("read-button");
+
+    if (book.Read === "yes") {
+      readButton.textContent = "Read";
+      readButton.style.background = "#9fff9c";
+    }
+
+    if (book.Read === "no") {
+      readButton.textContent = "Not Read";
+      readButton.style.background = "#ff9c9c";
+    }
+
+    card.appendChild(readButton);
+
+    //Make the remove button work
+    readButton.addEventListener("click", function () {
+      if (readButton.textContent === "Read") {
+        readButton.textContent = "Not Read";
+        readButton.style.background = "#ff9c9c";
+      } else {
+        readButton.textContent = "Read";
+        readButton.style.background = "#9fff9c";
+      }
+    });
   });
 }
 
@@ -101,5 +127,3 @@ function modalInfo() {
   //Close the modal
   modal.style.display = "none";
 }
-
-console.log(myLibrary);

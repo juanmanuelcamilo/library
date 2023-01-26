@@ -102,7 +102,7 @@ header {
 .card {
   border-radius: 1rem;
   background-color: white;
-  height: 13rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -112,11 +112,19 @@ header {
   font-size: 1.2rem;
 }
 
-.remove-book-button {
+.remove-book-button,
+.read-button {
   border: none;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.5rem 0;
-  margin-top: -10px;
   background-color: #c0c0c0;
   font-size: 1.2em;
+  margin-top: -11px;
+  margin-bottom: 0;
+}
+
+.read-button {
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: 0;
+  margin-bottom: -11px;
 }
